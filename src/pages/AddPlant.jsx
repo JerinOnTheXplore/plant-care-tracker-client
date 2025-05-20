@@ -1,16 +1,42 @@
 import React from 'react';
 import NavBar from '../Components/NavBar';
+import Swal from 'sweetalert2';
 
 const AddPlant = () => {
 
     const handleAddPlant = e =>{
         e.preventDefault();
         const form = e.target;
+        const formData = new FormData(form);
+        const newPlant = Object.fromEntries(formData);
+        console.log(newPlant);
+
+    // send plant data to the db
+    fetch('http://localhost:3000/plants',{
+        method:'POST',
+        headers: {
+        'Content-Type':'application/json'
+        },
+        body: JSON.stringify(newPlant)
+    })
+    .then(res => res.json())
+    .then(data =>{
+        if(data.insertedId){
+            // console.log('Added successfully',data)
+            Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Plant Added Successfully",
+  showConfirmButton: false,
+  timer: 1500
+});
+        }
+    })  
+
     }
 
     return (
         <div>
-        <NavBar></NavBar>
          <div className="p-6 md:p-12 lg:p-20 bg-gradient-to-br from-[#dbeac2] via-[#e5f0d6] to-[#f5f9ec] min-h-screen">
   <div className="text-center mb-10 space-y-3">
     <h1 className="text-4xl md:text-5xl font-bold text-[#3b5b2e]">Add a New Plant</h1>

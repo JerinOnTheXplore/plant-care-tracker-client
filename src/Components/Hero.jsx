@@ -69,7 +69,7 @@ const Hero = () => {
       <div
         className="w-full h-full bg-cover bg-center flex items-center justify-center text-white relative"
         style={{ backgroundImage: `url(${slide.image})`}}>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#556B2F]/80 to-[#8F9779]/50"><h1 className="text-white text-3xl md:text-5xl font-bold drop-shadow-lg mt-10">Stay on Track with Every Plant Need</h1></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#556B2F]/80 to-[#8F9779]/50"></div>
         <div className="z-10 px-4 sm:px-6 md:px-10 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif drop-shadow-lg">
         {slide.title}

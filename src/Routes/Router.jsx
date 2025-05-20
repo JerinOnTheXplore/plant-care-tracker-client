@@ -1,11 +1,19 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../Layouts/HomeLayout";
 import AddPlant from "../pages/AddPlant";
+import MainLayout from "../Layouts/MainLayout";
 
 const router = createBrowserRouter([
     {
         path:"/",
-        element:<HomeLayout></HomeLayout>,
+        element:<MainLayout></MainLayout>,
+        children:[
+         {
+            index:true,
+            loader:()=> fetch('http://localhost:3000/plants'),
+            element:<HomeLayout></HomeLayout>,
+         },
+        ]
     },
     {
         path:"/auth",
