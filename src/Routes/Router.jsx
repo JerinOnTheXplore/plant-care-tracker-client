@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from "../Layouts/HomeLayout";
 import AddPlant from "../pages/AddPlant";
 import MainLayout from "../Layouts/MainLayout";
+import PlantDetails from "../pages/PlantDetails";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
     {
         path:"/plants",
         element:<h2>Plants Layout</h2>,
+    },
+    {
+        path:"/plants/:id",
+        loader:({params}) =>fetch(`http://localhost:3000/plants/${params.id}`),
+        element:<PlantDetails></PlantDetails>,
     },
     {
         path:"/addPlant",
