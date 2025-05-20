@@ -48,7 +48,7 @@ const NavBar = () => {
         <NavLink to="/" className={({ isActive }) => 
         isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl text-white font-semibold"}>𝗛𝗼𝗺𝗲</NavLink>
         <NavLink to="/plants" className={({ isActive }) =>isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
-        <NavLink to="/add-plant" className={({ isActive }) => isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗔𝗱𝗱 𝗣𝗹𝗮𝗻𝘁</NavLink>
+        <NavLink to="/addPlant" className={({ isActive }) => isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗔𝗱𝗱 𝗣𝗹𝗮𝗻𝘁</NavLink>
         <NavLink to="/my-plants" className={({ isActive }) =>
         isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗠𝘆 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
         </div>
