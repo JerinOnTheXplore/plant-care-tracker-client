@@ -4,7 +4,7 @@ import logoImage from '../assets/logoImage.jpg'
 const NavBar = () => {
     return (
     <div>
-    <div className="navbar bg-gradient-to-r from-emerald-400 via-teal-500 to-green-700 shadow-md font-serif sticky top-0 z-50 md:px-4">
+    <div className="navbar bg-gradient-to-r from-[#808000] via-[#556B2F] to-[#6B8E23] shadow-md font-serif sticky top-0 z-50 md:px-4">
     <div className="navbar-start">
      <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,18 +39,18 @@ const NavBar = () => {
         </div>
         <div className='flex  items-center'>
             <div><img className='w-14 md:w-16 rounded-full ' src={logoImage} alt="" /></div>
-            <div className="btn btn-ghost text-xl md:text-4xl lg:text-4xl text-gray-900 font-semibold">𝘉𝘰𝘯𝘴𝘢𝘪 𝘉𝘭𝘪𝘴𝘴</div>
+            <div className="btn btn-ghost text-xl md:text-4xl lg:text-4xl text-stone-100 font-semibold">𝘉𝘰𝘯𝘴𝘢𝘪 𝘉𝘭𝘪𝘴𝘴</div>
         </div>
        </div>
 
       <div className="navbar-center hidden lg:flex">
         <div className="flex space-x-5 text-[17px]">
         <NavLink to="/" className={({ isActive }) => 
-        isActive ? "text-black font-bold text-xl underline underline-offset-4" : "hover:text-slate-600 text-xl font-semibold"}>𝗛𝗼𝗺𝗲</NavLink>
-        <NavLink to="/plants" className={({ isActive }) =>isActive ? "text-black font-bold text-xl underline underline-offset-4" : "hover:text-slate-600 text-xl font-semibold"}>𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
-        <NavLink to="/add-plant" className={({ isActive }) => isActive ? "text-black font-bold text-xl underline underline-offset-4" : "hover:text-slate-600 text-xl font-semibold"}>𝗔𝗱𝗱 𝗣𝗹𝗮𝗻𝘁</NavLink>
+        isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl text-white font-semibold"}>𝗛𝗼𝗺𝗲</NavLink>
+        <NavLink to="/plants" className={({ isActive }) =>isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
+        <NavLink to="/add-plant" className={({ isActive }) => isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗔𝗱𝗱 𝗣𝗹𝗮𝗻𝘁</NavLink>
         <NavLink to="/my-plants" className={({ isActive }) =>
-        isActive ? "text-gray-800 font-bold text-xl underline underline-offset-4" : "hover:text-slate-600 text-xl font-semibold"}>𝗠𝘆 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
+        isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗠𝘆 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
         </div>
       </div>
 
