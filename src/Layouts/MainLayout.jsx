@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import HomeLayout from './HomeLayout';
 import NavBar from '../Components/NavBar';
 import Hero from '../Components/Hero';
 import { Outlet } from 'react-router';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MainLayout = () => {
+    useEffect(() =>{
+      AOS.init({
+        duration:800,
+        once:false,
+      })
+    },[]);
     return (
     <div>
     <header>

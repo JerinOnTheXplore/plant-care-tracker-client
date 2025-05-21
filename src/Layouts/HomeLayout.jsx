@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
-import PlantCard from '../Components/PlantCard';
+
 
 
 const HomeLayout = () => {
@@ -10,44 +10,39 @@ const HomeLayout = () => {
   const newestPlants = [...plants]
   .sort((a,b) => new Date(b.nextWatering) - new Date(a.nextWatering)).slice(0,6);
     return (
-    <div>
-    <div className="min-h-screen bg-gradient-to-b from-lime-100 to-lime-200 py-12 px-4">
-    <h1 className="text-4xl font-bold text-center mb-8 text-green-900">🌿 All Plants</h1>
+<div>
+<div className="min-h-screen bg-gradient-to-b from-lime-200 to-lime-300 py-12 px-4">
+  <h1 className="text-4xl font-bold text-center mb-10 text-green-900">🌿 Newest Plants</h1>
 
-<div className="overflow-x-auto">
-<table className="table w-full bg-lime-100 shadow-lg rounded-xl">
-      <thead className="bg-lime-300 text-green-800 font-bold text-left">
-      <tr>
-      <th>No.</th>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Care Level</th>
-      <th>Next Watering</th>
-      <th>Plant Info</th>
-      </tr>
-      </thead>
-  <tbody>
+  <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
   {newestPlants.map((plant, index) => (
-  <tr key={plant._id} className="hover:bg-lime-200">
-    <td>{index + 1}</td>
-    <td>
-    <img src={plant.photo} alt={plant.name} className="w-16 h-16 object-cover rounded" />
-    </td>
-    <td className="font-semibold text-green-800">{plant.name}</td>
-    <td className='text-green-800'>{plant.category}</td>
-    <td className='text-green-800'>{plant.careLevel}</td>
-    <td className='text-green-800'>{plant.nextWatering}</td>
-    <td className='text-green-800'><Link to={`/plants/${plant._id}`}>
-    <button className="btn btn-sm bg-lime-700 hover:bg-lime-800 text-white rounded">View Details</button></Link>
-    </td>
-    </tr>
-  ))}
-  </tbody>
-</table>
+  <div key={plant._id}
+  className="bg-white rounded-3xl shadow-xl border border-lime-200 overflow-hidden flex flex-col sm:flex-row"
+  data-aos="fade-up"
+  data-aos-delay={index * 100}>
+  {/* Image */}
+  <div className="sm:w-1/3 bg-lime-100 flex justify-center items-center p-4">
+  <img src={plant.photo} alt={plant.name}
+  className="w-40 h-40 object-cover rounded-full border-4 border-lime-300 shadow-md"/>
+  </div>
+
+  {/* Details*/}
+  <div className="sm:w-2/3 p-6 space-y-2 text-green-900">
+  <h2 className="text-2xl font-bold text-green-800">{plant.name}</h2>
+  <p><span className="font-semibold">🌿 Category:</span> {plant.category}</p>
+  <p><span className="font-semibold">💧 Care Level:</span> {plant.careLevel}</p>
+  <p><span className="font-semibold">🗓️ Next Watering:</span> {plant.nextWatering}</p>
+
+  <Link to={`/plants/${plant._id}`}>
+  <button className="mt-3 bg-lime-600 hover:bg-lime-700 text-white py-2 px-4 rounded-full shadow transition">
+  View Details</button>
+  </Link>
+  </div>
 </div>
-    </div>
-    </div>
+  ))}
+ </div>
+</div>
+</div>
     );
 };
 
