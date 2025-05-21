@@ -7,6 +7,8 @@ import AllPlants from "../pages/AllPlants";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import MyPlantsPage from "../pages/MyPlantsPage";
+import PrivateRoute from "../provider/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -40,8 +42,9 @@ const router = createBrowserRouter([
     ],
     },
     {
-        path:"/plants",
-        element:<h2>Plants Layout</h2>,
+        path:"/myplants",
+        loader: () =>fetch('http://localhost:3000/plants'),
+        element:<MyPlantsPage></MyPlantsPage>,
     },
     {
         path:"/plants/:id",
@@ -50,7 +53,11 @@ const router = createBrowserRouter([
     },
     {
         path:"/addPlant",
-        element:<AddPlant></AddPlant>,
+        element:(
+        <PrivateRoute>
+          <AddPlant></AddPlant>  
+        </PrivateRoute>
+        ),
     },
     {
         path:"/*",
