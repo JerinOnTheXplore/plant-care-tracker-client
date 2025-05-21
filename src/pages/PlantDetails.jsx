@@ -1,11 +1,13 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
+import NavBar from '../Components/NavBar';
 
 const PlantDetails = () => {
     const plant = useLoaderData();
     const navigate = useNavigate();
     return (
 <div>
+ <NavBar></NavBar>
 <div className='min-h-screen bg-gradient-to-br from-lime-200 to-lime-300 px-4 py-12 flex justify-center items-center'>
   <div className="w-full max-w-5xl bg-white border border-lime-200 shadow-xl rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
    {/* image and name */}

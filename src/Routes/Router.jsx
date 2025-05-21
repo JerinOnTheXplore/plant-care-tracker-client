@@ -3,6 +3,10 @@ import HomeLayout from "../Layouts/HomeLayout";
 import AddPlant from "../pages/AddPlant";
 import MainLayout from "../Layouts/MainLayout";
 import PlantDetails from "../pages/PlantDetails";
+import AllPlants from "../pages/AllPlants";
+import AuthLayout from "../Layouts/AuthLayout";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
     {
@@ -17,8 +21,23 @@ const router = createBrowserRouter([
         ]
     },
     {
+        path:"/allPlants",
+        loader: () => fetch('http://localhost:3000/plants'),
+        element:<AllPlants></AllPlants>,
+    },
+    {
         path:"/auth",
-        element:<h2>Authentication Layout</h2>,
+        element:<AuthLayout></AuthLayout>,
+        children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
+      },
+    ],
     },
     {
         path:"/plants",

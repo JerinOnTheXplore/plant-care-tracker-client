@@ -37,6 +37,7 @@ const AddPlant = () => {
 
     return (
         <div>
+        <NavBar></NavBar>
          <div className="p-6 md:p-12 lg:p-20 bg-gradient-to-br from-[#dbeac2] via-[#e5f0d6] to-[#f5f9ec] min-h-screen">
   <div className="text-center mb-10 space-y-3">
     <h1 className="text-4xl md:text-5xl font-bold text-[#3b5b2e]">Add a New Plant</h1>
@@ -105,6 +106,16 @@ const AddPlant = () => {
         <label className="label font-semibold text-[#3b5b2e]">Photo URL</label>
         <input type="text" name="photo" placeholder="Paste image URL" className="input input-bordered w-full" />
       </div>
+      {/* User name */}
+    <div>
+      <label className="label font-semibold text-[#3b5b2e]">User Name</label>
+      <input type="text" name='username' placeholder='Enter your name' className='input input-bordered w-full'/>
+    </div>
+    {/* User email */}
+    <div>
+      <label className="label font-semibold text-[#3b5b2e]">User Email</label>
+      <input type="text" name='email' placeholder='Enter your email' className='input input-bordered w-full'/>
+    </div>
     </div>
 
     {/* Description */}
