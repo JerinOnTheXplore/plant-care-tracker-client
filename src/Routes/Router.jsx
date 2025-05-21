@@ -18,14 +18,14 @@ const router = createBrowserRouter([
         children:[
          {
             index:true,
-            loader:()=> fetch('http://localhost:3000/plants'),
+            loader:()=> fetch('https://plant-care-tracker-server-beta.vercel.app/plants'),
             element:<HomeLayout></HomeLayout>,
          },
         ]
     },
     {
         path:"/allPlants",
-        loader: () => fetch('http://localhost:3000/plants'),
+        loader: () => fetch('https://plant-care-tracker-server-beta.vercel.app/plants'),
         element:<AllPlants></AllPlants>,
     },
     {
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     },
     {
         path:"/myplants",
-        loader: () =>fetch('http://localhost:3000/plants'),
+        loader: () =>fetch('https://plant-care-tracker-server-beta.vercel.app/plants'),
         element:(
           <PrivateRoute>
             <MyPlantsPage></MyPlantsPage>
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
     },
     {
         path:"/updatePlant/:id",
-        loader:({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
+        loader:({params}) => fetch(`https://plant-care-tracker-server-beta.vercel.app/plants/${params.id}`),
         element:(
         <PrivateRoute>
           <UpdatePlantPage></UpdatePlantPage>
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     },
     {
         path:"/plants/:id",
-        loader:({params}) =>fetch(`http://localhost:3000/plants/${params.id}`),
+        loader:({params}) =>fetch(`https://plant-care-tracker-server-beta.vercel.app/plants/${params.id}`),
         element:(
         <PrivateRoute>
           <PlantDetails></PlantDetails>

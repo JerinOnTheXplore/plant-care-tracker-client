@@ -14,7 +14,7 @@ const UpdatePlantPage = () => {
 
     const handleUpdate = async e =>{
       e.preventDefault();
-      const res = await fetch(`http://localhost:3000/plants/${plant._id}`,{
+      const res = await fetch(`https://plant-care-tracker-server-beta.vercel.app/plants/${plant._id}`,{
         method:'PUT',
         headers:{'Content-Type': 'application/json'},
         body: JSON.stringify(formData),
