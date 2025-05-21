@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import MyPlantsPage from "../pages/MyPlantsPage";
 import PrivateRoute from "../provider/PrivateRoute";
+import UpdatePlantPage from "../pages/UpdatePlantPage";
 
 const router = createBrowserRouter([
     {
@@ -44,12 +45,29 @@ const router = createBrowserRouter([
     {
         path:"/myplants",
         loader: () =>fetch('http://localhost:3000/plants'),
-        element:<MyPlantsPage></MyPlantsPage>,
+        element:(
+          <PrivateRoute>
+            <MyPlantsPage></MyPlantsPage>
+          </PrivateRoute>
+        ),
+    },
+    {
+        path:"/updatePlant/:id",
+        loader:({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
+        element:(
+        <PrivateRoute>
+          <UpdatePlantPage></UpdatePlantPage>
+        </PrivateRoute>
+        ),
     },
     {
         path:"/plants/:id",
         loader:({params}) =>fetch(`http://localhost:3000/plants/${params.id}`),
-        element:<PlantDetails></PlantDetails>,
+        element:(
+        <PrivateRoute>
+          <PlantDetails></PlantDetails>
+        </PrivateRoute>
+        ),
     },
     {
         path:"/addPlant",
