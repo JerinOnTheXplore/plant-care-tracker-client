@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import logoImage from '../assets/logoImage.jpg'
+import { AuthContext } from '../provider/AuthProvider';
+import Loading from '../pages/Loading';
+import Swal from 'sweetalert2';
 const NavBar = () => {
+  const {user,logout,loading} = use(AuthContext);
+  if(loading){
+    return <Loading></Loading>;
+  }
+
+  const handleLogout=()=>{
+      logout().then(()=>{
+        Swal.fire({
+          icon: 'success',
+          title: 'Logout Successful!',
+          showConfirmButton: false,
+          timer: 1500
+           });
+      }).catch((error)=>{
+         console.log(error);
+      })
+    }
     return (
     <div>
     <div className="navbar bg-gradient-to-r from-[#808000] via-[#556B2F] to-[#6B8E23] shadow-md font-serif sticky top-0 z-50 md:px-4">
@@ -26,13 +46,13 @@ const NavBar = () => {
         </NavLink>
         </li>
         <li>
-        <NavLink to="/all-plants" className={({ isActive }) =>isActive ? "text-green-700 font-semibold" : "hover:text-green-700"}>All Plants</NavLink>
+        <NavLink to="/allPlants" className={({ isActive }) =>isActive ? "text-green-700 font-semibold" : "hover:text-green-700"}>All Plants</NavLink>
         </li>
         <li>
-        <NavLink to="/add-plant" className={({ isActive }) => isActive ? "text-green-700 font-semibold" : "hover:text-green-700"}>Add Plant</NavLink>
+        <NavLink to="/addPlant" className={({ isActive }) => isActive ? "text-green-700 font-semibold" : "hover:text-green-700"}>Add Plant</NavLink>
         </li>
         <li>
-        <NavLink to="/my-plants" className={({ isActive }) =>
+        <NavLink to="/myplants" className={({ isActive }) =>
         isActive ? "text-green-700 font-semibold" : "hover:text-green-700"}>My Plants</NavLink>
         </li>
         </ul>
@@ -46,20 +66,18 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <div className="flex space-x-5 text-[17px]">
         <NavLink to="/" className={({ isActive }) => 
-        isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl text-white font-semibold"}>𝗛𝗼𝗺𝗲</NavLink>
-        <NavLink to="/allPlants" className={({ isActive }) =>isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
-        <NavLink to="/addPlant" className={({ isActive }) => isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗔𝗱𝗱 𝗣𝗹𝗮𝗻𝘁</NavLink>
+        isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-200 text-2xl text-white font-semibold"}>𝗛𝗼𝗺𝗲</NavLink>
+        <NavLink to="/allPlants" className={({ isActive }) =>isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-200 text-2xl  text-white font-semibold"}>𝗔𝗹𝗹 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
+        <NavLink to="/addPlant" className={({ isActive }) => isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-200 text-2xl  text-white font-semibold"}>𝗔𝗱𝗱 𝗣𝗹𝗮𝗻𝘁</NavLink>
         <NavLink to="/myplants" className={({ isActive }) =>
-        isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-600 text-2xl  text-white font-semibold"}>𝗠𝘆 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
+        isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-200 text-2xl  text-white font-semibold"}>𝗠𝘆 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
         </div>
       </div>
 
     <div className="navbar-end" />
     <div className='flex gap-3'>
-        <NavLink to="/auth/login" className={({ isActive }) =>
-  `btn btn-sm ${isActive ? "text-black font-bold text-xl " : "btn-outline hover:text-slate-600 bg-slate-300 text-lg md:text-xl lg:text-2xl font-semibold"}`}>𝗟𝗼𝗴𝗶𝗻</NavLink>
-    <NavLink to="/auth/register" className={({ isActive }) =>
-    `btn btn-sm ${isActive ? " text-black font-bold text-xl" : "btn-outline bg-slate-300 hover:text-slate-600 text-lg md:text-xl lg:text-2xl font-semibold"}`}>𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿</NavLink>
+        {user ? (<button onClick={handleLogout} className='btn btn-neutral text-white btn-outline text-xl border-2 border-gray-600'>Logout</button>) : (<Link to="/auth/login" className="btn btn-neutral text-white btn-outline text-xl border-2 border-gray-600">Login</Link>)}
+    <NavLink to="/auth/register" className="btn btn-neutral text-white btn-outline text-xl border-2 border-gray-600">𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿</NavLink>
     </div>
     </div>
     </div>

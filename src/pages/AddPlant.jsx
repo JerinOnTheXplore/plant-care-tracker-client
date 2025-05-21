@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NavBar from '../Components/NavBar';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
 const AddPlant = () => {
-
+   const {user} = useContext(AuthContext);
     const handleAddPlant = e =>{
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const newPlant = Object.fromEntries(formData);
         console.log(newPlant);
+
+        newPlant.userEmail = user?.email;
+        if('email' in newPlant){
+        delete newPlant.email;
+        }
 
     // send plant data to the db
     fetch('http://localhost:3000/plants',{
@@ -114,7 +120,9 @@ const AddPlant = () => {
     {/* User email */}
     <div>
       <label className="label font-semibold text-[#3b5b2e]">User Email</label>
-      <input type="text" name='email' placeholder='Enter your email' className='input input-bordered w-full'/>
+      <input type="text" name='email'
+      defaultValue={user?.email}
+      placeholder='Enter your email' className='input input-bordered w-full'/>
     </div>
     </div>
 

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import NavBar from '../Components/NavBar';
 
 const MyPlantsPage = () => {
@@ -21,7 +21,7 @@ const MyPlantsPage = () => {
       <h2 className="text-3xl font-bold text-center text-green-900 mb-8">🌱 My Plants</h2>
       <div className="overflow-x-auto">
         <table className="table w-full bg-lime-100 shadow-lg rounded-xl">
-          <thead className="bg-lime-300 text-green-800 font-bold text-left">
+          <thead className="bg-lime-400 text-green-800 font-bold text-left">
             <tr>
               <th>No.</th>
               <th>Image</th>
@@ -33,7 +33,7 @@ const MyPlantsPage = () => {
           </thead>
           <tbody>
             {myPlants.map((plant, index) => (
-              <tr key={plant._id} className="hover:bg-lime-200">
+              <tr key={plant._id} className="hover:bg-lime-300 bg-lime-200">
                 <td>{index + 1}</td>
                 <td>
                   <img src={plant.photo} alt={plant.name} className="w-16 h-16 object-cover rounded" />
