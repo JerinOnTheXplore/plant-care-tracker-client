@@ -56,10 +56,10 @@ const NavBar = () => {
 
     <div className="navbar-end" />
     <div className='flex gap-3'>
-        <NavLink to="/login" className={({ isActive }) =>
+        <NavLink to="/auth/login" className={({ isActive }) =>
   `btn btn-sm ${isActive ? "text-black font-bold text-xl " : "btn-outline hover:text-slate-600 bg-slate-300 text-lg md:text-xl lg:text-2xl font-semibold"}`}>𝗟𝗼𝗴𝗶𝗻</NavLink>
-    <NavLink to="/login" className={({ isActive }) =>
-    `btn btn-sm ${isActive ? " text-white font-semibold" : "btn-outline bg-slate-300 hover:text-slate-600 text-lg md:text-xl lg:text-2xl font-semibold"}`}>𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿</NavLink>
+    <NavLink to="/auth/register" className={({ isActive }) =>
+    `btn btn-sm ${isActive ? " text-black font-bold text-xl" : "btn-outline bg-slate-300 hover:text-slate-600 text-lg md:text-xl lg:text-2xl font-semibold"}`}>𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿</NavLink>
     </div>
     </div>
     </div>
