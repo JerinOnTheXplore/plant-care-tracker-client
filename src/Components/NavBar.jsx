@@ -82,7 +82,7 @@ const NavBar = () => {
       <img
         src={user.photoURL}
         alt="User"
-        className="w-10 h-10 rounded-full border-2 border-green-500"/>
+        className="w-24 md:w-44 lg:w-48  rounded-full border-2 border-green-500"/>
     </div>
     <button
       onClick={handleLogout}

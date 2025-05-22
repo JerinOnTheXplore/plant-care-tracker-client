@@ -5,6 +5,7 @@ import Hero from '../Components/Hero';
 import { Outlet } from 'react-router';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import SignsYourPlantNeedHelp from '../Components/SignsYourPlantNeedHelp';
 
 const MainLayout = () => {
     useEffect(() =>{
@@ -24,6 +25,9 @@ const MainLayout = () => {
     </section>
     <section>
     <Outlet></Outlet>
+    </section>
+    <section>
+     <SignsYourPlantNeedHelp></SignsYourPlantNeedHelp>
     </section>
     </main>
       

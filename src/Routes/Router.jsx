@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import MyPlantsPage from "../pages/MyPlantsPage";
 import PrivateRoute from "../provider/PrivateRoute";
 import UpdatePlantPage from "../pages/UpdatePlantPage";
+import SignsYourPlantNeedHelp from "../Components/SignsYourPlantNeedHelp";
 
 const router = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
           <AddPlant></AddPlant>  
         </PrivateRoute>
         ),
+    },
+    {
+        path:"/plantsHelp",
+        element:<SignsYourPlantNeedHelp></SignsYourPlantNeedHelp>,
     },
     {
         path:"/*",

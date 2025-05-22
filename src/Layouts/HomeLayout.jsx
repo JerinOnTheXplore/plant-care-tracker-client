@@ -7,8 +7,8 @@ const HomeLayout = () => {
   const plants = useLoaderData();
   // console.log(plants);
 
-  const newestPlants = [...plants]
-  .sort((a,b) => new Date(b.nextWatering) - new Date(a.nextWatering)).slice(0,6);
+  const newestPlants = plants.slice(0,6);
+  
     return (
 <div>
 <div className="min-h-screen bg-gradient-to-b from-lime-200 to-lime-300 py-12 px-4">
