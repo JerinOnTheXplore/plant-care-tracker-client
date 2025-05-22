@@ -4,6 +4,7 @@ import logoImage from '../assets/logoImage.jpg'
 import { AuthContext } from '../provider/AuthProvider';
 import Loading from '../pages/Loading';
 import Swal from 'sweetalert2';
+import ThemeToggle from './ThemeToggle';
 const NavBar = () => {
   const {user,logout,loading} = use(AuthContext);
   if(loading){
@@ -75,6 +76,9 @@ const NavBar = () => {
       </div>
 
     <div className="navbar-end" />
+    <div className='mr-2'>
+      <ThemeToggle/>
+    </div>
     <div className='flex gap-3'>
       {user ? (
   <div className="flex items-center gap-2">
