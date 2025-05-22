@@ -76,8 +76,31 @@ const NavBar = () => {
 
     <div className="navbar-end" />
     <div className='flex gap-3'>
-        {user ? (<button onClick={handleLogout} className='btn btn-neutral text-white btn-outline text-sm md:text-xl border-2 border-gray-600 p-1 md:p-2 lg:p-3'>Logout</button>) : (<Link to="/auth/login" className="btn btn-neutral text-white btn-outline text-sm md:text-xl border-2 border-gray-600 p-1 md:p-2 lg:p-3">Login</Link>)}
-    <NavLink to="/auth/register" className="btn btn-neutral text-white btn-outline border-2 border-gray-600 text-sm md:text-xl p-1 md:p-2 lg:p-3">𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿</NavLink>
+      {user ? (
+  <div className="flex items-center gap-2">
+    <div className="tooltip tooltip-bottom" data-tip={user.displayName || 'User'}>
+      <img
+        src={user.photoURL}
+        alt="User"
+        className="w-10 h-10 rounded-full border-2 border-green-500"/>
+    </div>
+    <button
+      onClick={handleLogout}
+      className="btn btn-neutral text-white btn-outline border-2 border-gray-600 text-sm md:text-xl p-1 md:p-2 lg:p-3"
+    >
+      Logout
+    </button>
+  </div>
+) : (
+  <div className="flex gap-2">
+    <Link to="/auth/login" className="btn btn-neutral text-white btn-outline border-2 border-gray-600 text-sm md:text-xl p-1 md:p-2 lg:p-3">
+      Login
+    </Link>
+    <Link to="/auth/register" className="btn btn-neutral text-white btn-outline border-2 border-gray-600 text-sm md:text-xl p-1 md:p-2 lg:p-3">
+      Register
+    </Link>
+  </div>
+)}  
     </div>
     </div>
     </div>
