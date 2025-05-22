@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
 import NavBar from '../Components/NavBar';
+import Footer from '../Components/Footer';
 
 const PlantDetails = () => {
     const plant = useLoaderData();
@@ -47,7 +48,8 @@ const PlantDetails = () => {
    
   </div>
   
-</div>   
+</div>
+<Footer></Footer>   
 </div>
     );
 };

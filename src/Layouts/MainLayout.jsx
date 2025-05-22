@@ -6,6 +6,8 @@ import { Outlet } from 'react-router';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SignsYourPlantNeedHelp from '../Components/SignsYourPlantNeedHelp';
+import FunPlantFacts from '../Components/FunPlantFacts';
+import Footer from '../Components/Footer';
 
 const MainLayout = () => {
     useEffect(() =>{
@@ -29,8 +31,11 @@ const MainLayout = () => {
     <section>
      <SignsYourPlantNeedHelp></SignsYourPlantNeedHelp>
     </section>
+    <section>
+     <FunPlantFacts></FunPlantFacts>
+    </section>
     </main>
-      
+    <Footer></Footer> 
            
     </div>
     );

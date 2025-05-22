@@ -2,9 +2,11 @@ import Lottie from 'lottie-react';
 import React from 'react';
 import plantWarningAnimation from '../assets/Animation - 1747915939377.json'
 
+
 const SignsYourPlantNeedHelp = () => {
     return (
-    <div className='max-w-6xl mx-auto my-12 p-8 bg-lime-100 rounded-3xl shadow-lg border border-lime-300 flex flex-col md:flex-row items-center gap-8'>
+    <div className='px-4'>
+     <div className='max-w-6xl mx-auto my-12 p-8 bg-lime-100 rounded-3xl shadow-lg border border-lime-300 flex flex-col md:flex-row items-center gap-8'>
      <div className="w-full md:w-1/2 flex justify-center">
         <div className="bg-[#f9fbe7] p-4 rounded-full shadow-inner border border-lime-400">
           <Lottie animationData={plantWarningAnimation} style={{ width: 260, height: 260 }} loop />
@@ -28,6 +30,7 @@ const SignsYourPlantNeedHelp = () => {
         </ul>
         <p className="text-sm text-[#5e7041] mt-4">Stay alert, save a green friend 🌱</p>
       </div>       
+    </div>
     </div>
     );
 };

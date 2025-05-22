@@ -57,7 +57,7 @@ const Hero = () => {
         className="hero min-h-[60vh] md:min-h-screen bg-cover bg-center relative"
         style={{backgroundImage: `url(${heroImage})`,}}>
         <div className="bg-opacity-20"></div>
-        <div className="hero-content text-neutral-content text-center w-96 md:w-[520px] px-4 sm:px-6 md:px-10 flex flex-col">
+        <div className="hero-content text-neutral-content text-center w-96 md:w-[520px] px-5 sm:px-7 md:px-10 flex flex-col">
     <Swiper
       modules={[Pagination, Autoplay, EffectFade]}
       pagination={{ clickable: true }}

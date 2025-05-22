@@ -11,6 +11,7 @@ import MyPlantsPage from "../pages/MyPlantsPage";
 import PrivateRoute from "../provider/PrivateRoute";
 import UpdatePlantPage from "../pages/UpdatePlantPage";
 import SignsYourPlantNeedHelp from "../Components/SignsYourPlantNeedHelp";
+import FunPlantFacts from "../Components/FunPlantFacts";
 
 const router = createBrowserRouter([
     {
@@ -77,11 +78,7 @@ const router = createBrowserRouter([
           <AddPlant></AddPlant>  
         </PrivateRoute>
         ),
-    },
-    {
-        path:"/plantsHelp",
-        element:<SignsYourPlantNeedHelp></SignsYourPlantNeedHelp>,
-    },
+    },  
     {
         path:"/*",
         element:<h2>Error</h2>,

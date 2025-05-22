@@ -3,6 +3,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import { Link, useLoaderData } from 'react-router';
 import NavBar from '../Components/NavBar';
 import Swal from 'sweetalert2';
+import Footer from '../Components/Footer';
 
 const MyPlantsPage = () => {
     const {user} = useContext(AuthContext);
@@ -83,7 +84,8 @@ const MyPlantsPage = () => {
     </tbody>
     </table>
     </div>
-  </div>   
+  </div>
+  <Footer></Footer>   
 </div>
     );
 };

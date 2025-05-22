@@ -2,6 +2,8 @@ import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import NavBar from '../Components/NavBar';
+import Footer from '../Components/Footer';
 
 const Register = () => {
  const {createUser,setUser,updateUser} = use(AuthContext);
@@ -63,6 +65,7 @@ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
  }
     return (
         <div>
+        <NavBar></NavBar>
         <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-lime-100 to-lime-200 px-4">
   <div className="card w-full max-w-md bg-lime-50 shadow-2xl rounded-2xl p-8">
     <h2 className="text-3xl font-bold text-center text-green-800 mb-6">
@@ -138,6 +141,7 @@ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     </form>
   </div>
 </div>  
+ <Footer></Footer>
         </div>
     );
 };

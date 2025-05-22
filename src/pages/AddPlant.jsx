@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import NavBar from '../Components/NavBar';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import Footer from '../Components/Footer';
 
 const AddPlant = () => {
    const {user} = useContext(AuthContext);
@@ -44,7 +45,7 @@ const AddPlant = () => {
     return (
         <div>
         <NavBar></NavBar>
-         <div className="p-6 md:p-12 lg:p-20 bg-gradient-to-br from-[#dbeac2] via-[#e5f0d6] to-[#f5f9ec] min-h-screen">
+         <div className="p-6 bg-gradient-to-b from-lime-100 to-lime-200 min-h-screen">
   <div className="text-center mb-10 space-y-3">
     <h1 className="text-4xl md:text-5xl font-bold text-[#3b5b2e]">Add a New Plant</h1>
     <p className="text-gray-600 max-w-2xl text-xl md:text-2xl mx-auto">
@@ -52,7 +53,7 @@ const AddPlant = () => {
     </p>
   </div>
 
-  <form onSubmit={handleAddPlant} className="bg-lime-100 rounded-xl shadow-xl p-6 md:p-10 space-y-6 max-w-4xl mx-auto">
+  <form onSubmit={handleAddPlant} className="bg-lime-200 rounded-xl shadow-xl p-6 md:p-10 space-y-6 max-w-4xl mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Plant Name */}
       <div>
@@ -138,7 +139,7 @@ const AddPlant = () => {
     </button>
   </form>
 </div>
-   
+  <Footer></Footer> 
         </div>
     );
 };

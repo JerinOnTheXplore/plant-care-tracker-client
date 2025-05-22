@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
 import NavBar from '../Components/NavBar';
+import Footer from '../Components/Footer';
 
 const AllPlants = () => {
   const plants = useLoaderData();
@@ -44,7 +45,8 @@ const AllPlants = () => {
       </tbody>
       </table>
      </div>
-     </div>       
+     </div>
+    <Footer></Footer>       
     </div>
     );
 };

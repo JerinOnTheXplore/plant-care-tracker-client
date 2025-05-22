@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import Footer from '../Components/Footer';
+import NavBar from '../Components/NavBar';
 
 const UpdatePlantPage = () => {
     const plant = useLoaderData();
@@ -27,6 +29,8 @@ const UpdatePlantPage = () => {
     };
 
     return (
+    <div>
+    <NavBar></NavBar>
     <div className="p-6 md:p-12 lg:p-20 bg-gradient-to-br from-[#dbeac2] via-[#e5f0d6] to-[#f5f9ec] min-h-screen">
        <div className="text-center mb-10 space-y-3">
     <h1 className="text-4xl md:text-5xl font-bold text-[#3b5b2e]">Update Your Plant</h1>
@@ -42,6 +46,8 @@ const UpdatePlantPage = () => {
       <button className="btn bg-green-600 text-white w-full">Update Plant</button>
     </form>
 
+    </div>
+    <Footer></Footer>
     </div>
     );
 };
