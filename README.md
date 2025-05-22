@@ -1,3 +1,35 @@
+# 🌱 Plant Care Tracker
+
+A web application to help you manage and track your plant collection with ease.
+
+🔗 **Live Site**: [https://plant-care-tracker-80dfe.web.app]
+
+---
+
+## 🚀 Features
+
+- 🔐 User Authentication (Login/Register)
+- 🪴 Add, Edit & Delete Personal Plants
+- 📊 Track watering and care schedules
+- 📱 Fully Responsive Design
+- 📦 Firebase + Express Integration
+
+---
+
+## 📁 Technologies Used
+
+- React + React Router
+- Tailwind CSS + DaisyUI
+- Firebase Authentication
+- Express.js + MongoDB
+- Lottie React,React ToolTip
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
