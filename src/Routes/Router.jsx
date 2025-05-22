@@ -12,6 +12,7 @@ import PrivateRoute from "../provider/PrivateRoute";
 import UpdatePlantPage from "../pages/UpdatePlantPage";
 import SignsYourPlantNeedHelp from "../Components/SignsYourPlantNeedHelp";
 import FunPlantFacts from "../Components/FunPlantFacts";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
     {
@@ -81,7 +82,7 @@ const router = createBrowserRouter([
     },  
     {
         path:"/*",
-        element:<h2>Error</h2>,
+        element:<Error></Error>,
     },
 ])
 
