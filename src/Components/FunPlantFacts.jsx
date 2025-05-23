@@ -43,8 +43,8 @@ const FunPlantFacts = () => {
                 backgroundColor: "#ecfccb",
                 color: "#166534",
                 border: "1px solid #bbf7d0",
-                fontSize: "14px",
-                padding: "6px 10px",
+                fontSize: "7px",
+                padding: "10px 10px",
                 borderRadius: "8px"
               }}/>
           </li>

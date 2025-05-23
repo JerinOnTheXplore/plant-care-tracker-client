@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData, useNavigate } from 'react-router';
+import { Link, useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import Footer from '../Components/Footer';
 import NavBar from '../Components/NavBar';
@@ -44,8 +44,8 @@ const UpdatePlantPage = () => {
       <input name="photo" value={formData.photo} onChange={handleChange} placeholder="Image URL" className="input input-bordered w-full mb-4" />
       <input name="nextWatering" value={formData.nextWatering} onChange={handleChange} placeholder="Next Watering Date" className="input input-bordered w-full mb-4" />
       <button className="btn bg-green-600 text-white w-full">Update Plant</button>
+      <Link to="/myplants" className="btn bg-green-700 text-white w-full mt-2">Go Back</Link>
     </form>
-
     </div>
     <Footer></Footer>
     </div>

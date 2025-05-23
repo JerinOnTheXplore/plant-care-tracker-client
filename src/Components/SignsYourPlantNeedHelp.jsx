@@ -15,13 +15,13 @@ const SignsYourPlantNeedHelp = () => {
 
       {/* Text */}
       <div className="w-full md:w-1/2 text-[#3b4d29] space-y-4">
-        <h2 className="text-4xl font-extrabold text-[#2f3e1c] mb-4">
+        <h2 className="text-4xl font-extrabold text-green-800 mb-4">
           🚨 Signs Your Plant Needs Help
         </h2>
-        <p className="text-lg italic text-[#4a5c2f]">
+        <p className="text-lg italic text-green-900">
           Don’t miss the early signals — protect your plant before it’s too late.
         </p>
-        <ul className="list-inside list-disc space-y-2 text-base md:text-lg font-medium">
+        <ul className="list-inside list-decimal space-y-2 text-base md:text-lg font-medium text-green-900">
           <li> Yellowing or browning leaves</li>
           <li> Wilting despite watering</li>
           <li> Mold or spots on the soil</li>

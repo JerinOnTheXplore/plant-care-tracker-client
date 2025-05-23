@@ -4,6 +4,8 @@ import logoImage from '../assets/logoImage.jpg'
 import { AuthContext } from '../provider/AuthProvider';
 import Loading from '../pages/Loading';
 import Swal from 'sweetalert2';
+import DarkModeToggler from './DarkModeToggler';
+import { ThemeProvider } from '../context/ThemeContext';
 const NavBar = () => {
   const {user,logout,loading} = use(AuthContext);
   if(loading){
@@ -72,10 +74,15 @@ const NavBar = () => {
         <NavLink to="/myplants" className={({ isActive }) =>
         isActive ? "text-white font-bold text-2xl underline underline-offset-4" : "hover:text-slate-200 text-2xl  text-white font-semibold"}>𝗠𝘆 𝗣𝗹𝗮𝗻𝘁𝘀</NavLink>
         </div>
+        
       </div>
-
     <div className="navbar-end" />
-    <div className='flex gap-3'>
+    <div className='flex gap-3 items-center'>
+      <div>
+        <ThemeProvider>
+          <DarkModeToggler/>
+        </ThemeProvider>
+      </div>
       {user ? (
   <div className="flex items-center gap-2">
     <div className="tooltip tooltip-bottom" data-tip={user.displayName || 'User'}>

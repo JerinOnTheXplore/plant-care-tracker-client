@@ -33,9 +33,7 @@ const HomeLayout = () => {
   <p><span className="font-semibold">💧 Care Level:</span> {plant.careLevel}</p>
   <p><span className="font-semibold">🗓️ Next Watering:</span> {plant.nextWatering}</p>
 
-  <Link to={`/plants/${plant._id}`}>
-  <button className="mt-3 bg-lime-600 hover:bg-lime-700 text-white py-2 px-4 rounded-full shadow transition">
-  View Details</button>
+  <Link to={`/plants/${plant._id}`} className="btn mt-3 bg-lime-600 hover:bg-lime-700 text-white py-2 px-4 rounded-full shadow transition">View Details
   </Link>
   </div>
 </div>

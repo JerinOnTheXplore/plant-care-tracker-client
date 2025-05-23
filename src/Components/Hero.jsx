@@ -1,6 +1,4 @@
 import React from 'react';
-import heroImage from '../assets/indoor-plants-studio.jpg';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -53,12 +51,7 @@ const slides = [
 const Hero = () => {
   return (
     <div className="relative">
-      <div
-        className="hero min-h-[60vh] md:min-h-screen bg-cover bg-center relative"
-        style={{backgroundImage: `url(${heroImage})`,}}>
-        <div className="bg-opacity-20"></div>
-        <div className="hero-content text-neutral-content text-center w-96 md:w-[520px] px-5 sm:px-7 md:px-10 flex flex-col">
-    <Swiper
+      <Swiper
       modules={[Pagination, Autoplay, EffectFade]}
       pagination={{ clickable: true }}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
@@ -70,7 +63,7 @@ const Hero = () => {
         className="w-full h-full bg-cover bg-center flex items-center justify-center text-white relative"
         style={{ backgroundImage: `url(${slide.image})`}}>
         <div className="absolute inset-0 bg-gradient-to-r from-[#556B2F]/80 to-[#8F9779]/50"></div>
-        <div className="z-10 px-4 sm:px-6 md:px-10 text-center">
+        <div className="z-60 px-4 sm:px-6 md:px-10 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif drop-shadow-lg">
         {slide.title}
         </h1>
@@ -81,8 +74,6 @@ const Hero = () => {
       </SwiperSlide>
             ))}
     </Swiper>
-      </div>
-      </div>
     </div>
   );
 };

@@ -8,11 +8,11 @@ A web application to help you manage and track your plant collection with ease.
 
 ## 🚀 Features
 
-- 🔐 User Authentication (Login/Register)
-- 🪴 Add, Edit & Delete Personal Plants
-- 📊 Track watering and care schedules
-- 📱 Fully Responsive Design
-- 📦 Firebase + Express Integration
+-  User Authentication (Login/Register)
+-  Add, Edit & Delete Personal Plants
+-  Track watering and care schedules
+-  Fully Responsive Design
+-  Firebase + Express Integration
 
 ---
 
