@@ -5,7 +5,7 @@ import { useDarkMode } from '../context/ThemeContext';
 const DarkModeToggler = () => {
     const {darkMode,setDarkMode}=useDarkMode();
     return (
-        <button onClick={() => setDarkMode(!darkMode)} className='dark:bg-gray-800 dark:text-white transition-all ml-10 rounded-full mr-8'>
+        <button onClick={() => setDarkMode(!darkMode)} className='dark:bg-gray-800 dark:text-white transition-all  rounded-full'>
             {darkMode ? '☀️' : '🌙'}
         </button>
     );
