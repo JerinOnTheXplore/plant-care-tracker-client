@@ -3,9 +3,13 @@ import NavBar from '../Components/NavBar';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import Footer from '../Components/Footer';
+import Loading from './Loading';
 
 const AddPlant = () => {
-   const {user} = useContext(AuthContext);
+   const {user,loading} = useContext(AuthContext);
+   if(loading){
+    return <Loading/>
+   }
     const handleAddPlant = e =>{
         e.preventDefault();
         const form = e.target;
@@ -116,14 +120,18 @@ const AddPlant = () => {
       {/* User name */}
     <div>
       <label className="label font-semibold text-[#3b5b2e]">User Name</label>
-      <input type="text" name='username' placeholder='Enter your name' className='input input-bordered w-full'/>
+      <input type="text" name='username'
+      defaultValue={user?.displayName || ''}
+      readOnly
+      className='input input-bordered w-full'/>
     </div>
     {/* User email */}
     <div>
       <label className="label font-semibold text-[#3b5b2e]">User Email</label>
       <input type="text" name='email'
       defaultValue={user?.email}
-      placeholder='Enter your email' className='input input-bordered w-full'/>
+      readOnly
+      className='input input-bordered w-full'/>
     </div>
     </div>
 
