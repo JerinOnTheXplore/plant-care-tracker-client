@@ -1,5 +1,10 @@
 # 🌱 Plant Care Tracker
 
+
+<img src="https://i.ibb.co.com/Ng8XMT4G/plant.png" alt="plant Image" style="width: 30%; border-radius: 15px; filter: brightness(0.8);" />
+
+**Overview:** Helps users track watering schedules and plant health with a clean, user-friendly interface.
+
 A web application to help you manage and track your plant collection with ease.
 
 🔗 **Live Site**: [https://plant-care-tracker-80dfe.web.app]
@@ -15,6 +20,12 @@ A web application to help you manage and track your plant collection with ease.
 -  Firebase + Express Integration
 
 ---
+
+**Core Features:**
+
+   ⬛⬜ Add, Edit & Delete Personal Plants
+
+**Dependencies:** react-router, react-tooltip
 
 ## 📁 Technologies Used
 
