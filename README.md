@@ -21,11 +21,11 @@ A web application to help you manage and track your plant collection with ease.
 
 ---
 
-**Core Features:**
+##Core Features:##
 
    ⬛⬜ Add, Edit & Delete Personal Plants
 
-**Dependencies:** react-router, react-tooltip
+##Dependencies:## react-router, react-tooltip
 
 ## 📁 Technologies Used
 
