@@ -1,7 +1,7 @@
 # 🌱 Plant Care Tracker
 
 
-<img src="https://i.ibb.co.com/Ng8XMT4G/plant.png" alt="plant Image" style="width: 30%; border-radius: 15px; filter: brightness(0.8);" />
+<img src="https://i.ibb.co.com/Ng8XMT4G/plant.png" alt="plant Image" style="width: 100%; border-radius: 15px; filter: brightness(0.8);" />
 
 **Overview:** Helps users track watering schedules and plant health with a clean, user-friendly interface.
 
